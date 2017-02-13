@@ -31,8 +31,10 @@ Configure your dev kit to use the sigfox public key. This is mandatory otherwise
 Configuring the public key can usually be done through an AT command or through a function in the SDK, refer to the supplier's datasheet. Note that some manufacturers may not implement this function.
 
 In our example using a SiPy kit, we use the following commands to define our RCZ4 and public key:
-`sigfox = Sigfox(mode=Sigfox.SIGFOX, rcz=Sigfox.RCZ4)
-sigfox.public_key(True)`
+
+`sigfox = Sigfox(mode=Sigfox.SIGFOX, rcz=Sigfox.RCZ4)`
+
+`sigfox.public_key(True)`
 
 Finally send a sigfox message and verify in the Messages menu that it has been received:
 ![Messages](./Capture05.PNG)
