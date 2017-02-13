@@ -22,7 +22,8 @@ Finally you can configure callbacks for downlink messages. In our setup below we
 ![Callbacks Config](./Capture03.PNG)
 
 ## 3. Hardware connection to the devkit
-Add the attenuator and RF cable between the SNEK and your device as below. The attenuator is required in order to limit the received power on the SNEK.
+Add the attenuator and RF cable between the SNEK and your device as below. The attenuator is required in order to limit the received power on the SNEK:
+
 ![HW Connection](./Capture04.PNG)
 
 ## 4. Public Key setup and message reception
@@ -30,9 +31,7 @@ Configure your dev kit to use the sigfox public key. This is mandatory otherwise
 Configuring the public key can usually be done through an AT command or through a function in the SDK, refer to the supplier's datasheet. Note that some manufacturers may not implement this function.
 
 In our example using a SiPy kit, we use the following commands to define our RCZ4 and public key:
-`# init Sigfox for RCZ4
-sigfox = Sigfox(mode=Sigfox.SIGFOX, rcz=Sigfox.RCZ4)
-# set sigfox Network Emulator Public Key
+`sigfox = Sigfox(mode=Sigfox.SIGFOX, rcz=Sigfox.RCZ4)
 sigfox.public_key(True)`
 
 Finally send a sigfox message and verify in the Messages menu that it has been received:
